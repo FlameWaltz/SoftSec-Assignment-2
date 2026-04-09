@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Foodies</title>
+    <style>
+        body, html { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f7f7f7; color: #333; height: 100%; }
+        .header { background: #FFCC00; padding: 15px 5%; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .back-btn { text-decoration: none; color: black; font-size: 20px; margin-right: 15px; font-weight: bold; }
+        
+        .container { max-width: 600px; margin: 20px auto; padding: 0 15px; display: flex; flex-direction: column; min-height: 80vh; }
+        .section-title { font-size: 18px; font-weight: bold; margin: 20px 0 10px 0; }
+        
+        /* --- Empty State Styling --- */
+        .empty-state-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .empty-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            filter: grayscale(1);
+            opacity: 0.3;
+        }
+
+        .empty-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .empty-subtitle {
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .start-btn {
+            background-color: #00A651;
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0,166,81,0.2);
+            transition: transform 0.2s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.05);
+            background-color: #008f45;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="home.html" class="back-btn">←</a>
+        <span style="font-weight:bold; font-size:18px;">My Orders</span>
+    </div>
+
+    <div class="container">
+        
+        <div class="section-title">Ongoing Orders</div>
+        
+        <div class="empty-state-container">
+            <div class="empty-icon">🥡</div>
+            <div class="empty-title">Hungry?</div>
+            <p class="empty-subtitle">You haven't placed any orders yet. <br>Your delicious journey starts here!</p>
+            
+            <a href="home.html" class="start-btn">Find Food Near Me</a>
+        </div>
+
+        <div class="section-title">Order History</div>
+        </div>
+
+</body>
+</html>
