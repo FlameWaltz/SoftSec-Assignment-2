@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodies - Desserts</title>
+    <style>
+        /* CSS remains consistent with the professional list style */
+        body, html { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f7f7f7; color: #333; }
+        .sub-header { background-color: #FFCC00; padding: 15px 30px; display: flex; align-items: center; position: sticky; top: 0; z-index: 150; }
+        .back-link { text-decoration: none; color: black; font-size: 18px; font-weight: bold; display: flex; align-items: center; }
+        .back-link span { margin-right: 10px; font-size: 24px;}
+        .sub-header-title { flex: 1; text-align: center; font-size: 20px; font-weight: bold; }
+        .menu-section { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .dish-card { background: white; border-radius: 12px; overflow: hidden; display: flex; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: all 0.2s; position: relative; }
+        .dish-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+        .dish-img { width: 120px; height: 120px; border-radius: 8px; object-fit: cover; margin-right: 20px; }
+        .dish-info { flex: 1; }
+        .dish-title { font-size: 18px; font-weight: bold; margin-bottom: 5px; }
+        .dish-desc { font-size: 14px; color: #777; line-height: 1.4; margin-bottom: 15px; }
+        .dish-meta { display: flex; justify-content: space-between; align-items: center; position: absolute; bottom: 20px; width: calc(100% - 160px); }
+        .dish-price { font-size: 16px; font-weight: bold; }
+        .discount-tag { font-size: 11px; color: #FFCC00; background: #FFF9E0; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-right: 5px;}
+        .add-btn { background: #00A651; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
+        .add-btn:hover { background-color: #008f45; }
+    </style>
+</head>
+<body>
+    <div class="sub-header">
+        <a href="home.html" class="back-link"><span>←</span> Foodies</a>
+        <div class="sub-header-title">Desserts</div>
+    </div>
+    <div class="menu-section">
+        <h3>Sweet Treats</h3>
+        <div class="menu-grid">
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=300&h=300" alt="Chocolate Cake" class="dish-img">
+                <div class="dish-info">
+                    <div class="dish-title">Belgian Chocolate Slice</div>
+                    <div class="dish-desc">Rich, layered dark chocolate cake with a silky ganache finish.</div>
+                    <div class="dish-meta">
+                        <span><span class="discount-tag">Save RM 2</span><span class="dish-price">RM 15.00</span></span>
+                        <a href="customizedessert1.html" class="add-btn" style="text-decoration: none;">Add +</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=300&h=300" alt="Donuts" class="dish-img">
+                <div class="dish-info">
+                    <div class="dish-title">Glazed Party Donuts</div>
+                    <div class="dish-desc">A set of 3 soft, fluffy donuts with classic sugar glazing.</div>
+                    <div class="dish-meta">
+                        <span class="dish-price">RM 10.50</span>
+                        <a href="customizedessert2.html" class="add-btn" style="text-decoration: none;">Add +</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

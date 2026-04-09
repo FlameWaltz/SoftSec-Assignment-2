@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize - Butter Chicken</title>
+    <style>
+        body, html { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f7f7f7; color: #333; overflow-x: hidden; }
+        .modal-header { background: white; padding: 15px 20px; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .close-btn { text-decoration: none; color: #333; font-size: 24px; font-weight: bold; }
+        .content-container { max-width: 600px; margin: 0 auto; background: white; min-height: 100vh; padding-bottom: 120px; }
+        .item-detail { padding: 20px; display: flex; border-bottom: 8px solid #f7f7f7; }
+        .item-text { flex: 1; padding-right: 15px; }
+        .item-title { font-size: 20px; font-weight: bold; }
+        .item-price { font-size: 18px; font-weight: bold; float: right; }
+        .item-desc { font-size: 14px; color: #777; margin-top: 5px; }
+        .item-img { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; }
+        .section { padding: 20px; border-bottom: 8px solid #f7f7f7; }
+        .section-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .section-title { font-size: 16px; font-weight: bold; }
+        .pick-tag { background: #f0f0f0; padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+        .option-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+        .input-group { display: flex; align-items: center; }
+        .input-group input { margin-right: 10px; width: 18px; height: 18px; cursor: pointer; }
+        .voucher-input { display: flex; gap: 10px; margin-top: 10px; }
+        .voucher-input input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+        .apply-btn { background: #FFCC00; border: none; padding: 10px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        .special-instructions textarea { width: 100%; border: 1px solid #ddd; border-radius: 8px; padding: 12px; resize: none; margin-top: 10px; box-sizing: border-box; }
+        .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 15px 20px; border-top: 1px solid #eee; display: flex; align-items: center; }
+        .qty-selector { display: flex; align-items: center; margin-right: 15px; }
+        .qty-btn { width: 32px; height: 32px; border: 1px solid #ddd; background: white; border-radius: 4px; cursor: pointer; }
+        .add-to-basket { flex: 1; background: #00A651; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="modal-header"><a href="home.html" class="close-btn">×</a></div>
+    <div class="content-container">
+        <div class="item-detail">
+            <div class="item-text">
+                <span class="item-price">15.50</span>
+                <div class="item-title">Butter Chicken Curry</div>
+                <div class="item-desc">Tender chicken pieces in a rich, creamy tomato-based spiced gravy.</div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1593560704563-f176a2eb61db?auto=format&fit=crop&w=300" class="item-img">
+        </div>
+
+        <div class="section">
+            <div class="section-header"><div class="section-title">Spice Level</div><span class="pick-tag">Pick 1</span></div>
+            <div class="option-row"><div class="input-group"><input type="radio" name="spice" checked> Normal (Mild)</div><span>+0.00</span></div>
+            <div class="option-row"><div class="input-group"><input type="radio" name="spice"> Spicy</div><span>+0.00</span></div>
+            <div class="option-row"><div class="input-group"><input type="radio" name="spice"> Extra Spicy</div><span>+1.00</span></div>
+        </div>
+
+        <div class="section">
+            <div class="section-header"><div class="section-title">Add-on Side</div><span class="pick-tag">Pick 1</span></div>
+            <div class="option-row"><div class="input-group"><input type="radio" name="side" checked> Garlic Naan</div><span>+0.00</span></div>
+            <div class="option-row"><div class="input-group"><input type="radio" name="side"> Steamed Basmati Rice</div><span>+0.00</span></div>
+        </div>
+
+        <div class="section">
+            <div class="section-header"><div class="section-title">Take Away Packaging</div><span class="pick-tag">Pick 1</span></div>
+            <div class="option-row"><div class="input-group"><input type="radio" name="pkg" checked> Sealed Plastic Bowl</div><span>+1.00</span></div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Apply Discount Voucher</div>
+            <div class="voucher-input"><input type="text" placeholder="Enter code"><button class="apply-btn">Apply</button></div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Special instructions</div>
+            <div class="special-instructions"><textarea rows="3" placeholder="E.g. Less oil please, or extra gravy"></textarea></div>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <div class="qty-selector"><button class="qty-btn">−</button><span style="margin:0 15px; font-weight:bold;">1</span><button class="qty-btn">+</button></div>
+        <a href="paymentcurry.html" class="add-to-basket">Add to Cart - RM 16.50</a>
+    </div>
+</body>
+</html>

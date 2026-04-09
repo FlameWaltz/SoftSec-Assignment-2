@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodies - Customize Donuts</title>
+    <style>
+        /* Styles same as above for consistency */
+        body, html { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f7f7f7; color: #333; }
+        .modal-header { background-color: white; padding: 15px 20px; display: flex; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .close-btn { text-decoration: none; color: #666; font-size: 24px; font-weight: bold; }
+        .content-container { max-width: 600px; margin: 0 auto; background: white; min-height: 100vh; padding-bottom: 150px; }
+        .item-detail { padding: 20px; display: flex; border-bottom: 8px solid #f7f7f7; }
+        .item-text { flex: 1; padding-right: 15px; }
+        .item-title { font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+        .item-price { font-size: 18px; font-weight: bold; float: right; }
+        .item-desc { font-size: 14px; color: #777; line-height: 1.4; }
+        .item-img { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; }
+        .section { padding: 20px; border-bottom: 8px solid #f7f7f7; }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .section-title { font-size: 16px; font-weight: bold; }
+        .pick-tag { background: #f0f0f0; padding: 2px 8px; border-radius: 4px; font-size: 12px; color: #666; }
+        .option-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+        .input-group { display: flex; align-items: center; }
+        .input-group input { margin-right: 10px; width: 18px; height: 18px; }
+        .voucher-input { display: flex; gap: 10px; margin-top: 10px; }
+        .voucher-input input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+        .apply-btn { background: #FFCC00; border: none; padding: 10px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        .special-instructions textarea { width: 100%; border: 1px solid #ddd; border-radius: 8px; padding: 12px; font-family: inherit; resize: none; margin-top: 10px; box-sizing: border-box; }
+        .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 15px 20px; border-top: 1px solid #eee; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 100; }
+        .bottom-flex { display: flex; align-items: center; }
+        .qty-selector { display: flex; align-items: center; margin-right: 15px; }
+        .qty-btn { width: 32px; height: 32px; border: 1px solid #ddd; background: white; border-radius: 4px; font-size: 20px; cursor: pointer; }
+        .qty-num { margin: 0 15px; font-weight: bold; }
+        .add-to-basket { flex: 1; background-color: #00A651; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; text-align: center; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="modal-header"><a href="dessert.html" class="close-btn">×</a></div>
+    <div class="content-container">
+        <div class="item-detail">
+            <div class="item-text">
+                <span class="item-price">RM 10.50</span>
+                <div class="item-title">Glazed Party Donuts (Set of 3)</div>
+                <div class="item-desc">A set of 3 soft, fluffy donuts with classic sugar glazing. Perfect for sharing!</div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=300&h=300" class="item-img">
+        </div>
+
+        <div class="section">
+            <div class="section-header"><div class="section-title">Take Away Packaging</div><span class="pick-tag">Pick 1</span></div>
+            <div class="option-row">
+                <div class="input-group"><input type="radio" name="pkg" id="d1" checked><label for="d1">Donut Box</label></div>
+                <span>0.50</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Apply Discount Voucher</div>
+            <div class="voucher-input"><input type="text" placeholder="Enter code"><button class="apply-btn">Apply</button></div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Special instructions</div>
+            <div class="special-instructions"><textarea rows="3" placeholder="E.g. Separate the donuts in different bags"></textarea></div>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <div class="bottom-flex">
+            <div class="qty-selector"><button class="qty-btn">−</button><span class="qty-num">1</span><button class="qty-btn">+</button></div>
+            <a href="paymentdessert2.html" class="add-to-basket">Add to Cart - RM 11.00</a>
+        </div>
+    </div>
+</body>
+</html>
