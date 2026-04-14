@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodies - Checkout</title>
+    <style>
+        body, html { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f7f7f7; color: #333; }
+        .header { background: white; padding: 15px 5%; border-bottom: 1px solid #eee; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .modal-header { background: white; padding: 15px 20px; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .close-btn { text-decoration: none; color: #333; font-size: 24px; font-weight: bold; }
+        .logo { color: #00A651; font-weight: bold; font-size: 24px; text-decoration: none; }
+        
+        .main-content { max-width: 800px; margin: 20px auto; padding: 0 15px; padding-bottom: 100px; }
+        
+        .card-section { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .section-title { font-size: 18px; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .dish-img { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; }
+        
+        /* Delivery Section */
+        .delivery-info { display: flex; gap: 15px; align-items: flex-start; }
+        .map-placeholder { width: 120px; height: 120px; background: #e0e0e0; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #777; }
+        .address-details { flex: 1; }
+        .label { font-size: 12px; color: #999; margin-bottom: 4px; }
+        .address-text { font-size: 14px; margin-bottom: 15px; font-weight: 500; }
+        .input-box { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; }
+
+        /* Order Summary */
+        .order-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+        .item-info { display: flex; align-items: center; gap: 10px; }
+        .item-thumb { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; }
+        .fee-row { display: flex; justify-content: space-between; font-size: 14px; color: #666; margin-top: 10px; }
+
+        /* Payment Details */
+        .dropdown-select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; background: white; margin-bottom: 15px; appearance: none; cursor: pointer; }
+
+        /* Promo Section */
+        .promo-group { display: flex; gap: 10px; }
+        .promo-input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 4px; }
+        .apply-btn { background: #ccc; border: none; padding: 0 25px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+
+        /* Fixed Bottom Bar */
+        .footer-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #eee; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .total-price { font-size: 18px; font-weight: bold; }
+        .place-order-btn { background: #00A651; color: white; border: none; padding: 12px 60px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="modal-header"><a href="customizebeverages1.html" class="close-btn">×</a></div>
+        <a href="#" class="logo">Foodies</a>
+    </div>
+
+    <div class="main-content">
+        <div class="card-section">
+            <div class="section-title">Deliver to</div>
+            <div class="delivery-info">
+                <div class="map-placeholder">Map View</div>
+                <div class="address-details">
+                    <div class="label">Address</div>
+                    <div class="address-text">Bangi Gateway, Seksyen 15, Bandar Baru Bangi, 43650, Selangor</div>
+                    
+                    <div class="label">Note to driver</div>
+                    <input type="text" class="input-box" placeholder="e.g. Meet me at the lobby">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-section">
+            <div class="section-title">Order Summary</div>
+            <div class="order-item">
+                <div class="item-info">
+                    <span style="color:#00A651; font-weight:bold;">1 ×</span>
+                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=300&h=300" alt="Iced Coffee" class="dish-img">
+                    <span>Signature Iced Latte</span>
+                </div>
+                <span style="font-weight:500;">12.50</span>
+            </div>
+            <div style="border-top: 1px solid #eee; margin: 10px 0;"></div>
+            <div class="fee-row">
+                <span>Subtotal (Incl. Tax)</span>
+                <span>RM 1.00</span>
+            </div>
+            <div class="fee-row">
+                <span>Delivery fee</span>
+                <span>RM 5.00</span>
+            </div>
+        </div>
+
+        <div class="card-section">
+            <div class="section-title">Payment Details</div>
+            <div class="label">Payment Method</div>
+            <select class="dropdown-select">
+                <option>💵 Cash</option>
+                <option>💳 Credit / Debit Card</option>
+                <option>📱 Online Banking (FPX)</option>
+            </select>
+            
+            <div class="label">Profile</div>
+            <select class="dropdown-select">
+                <option>👤 Personal</option>
+                <option>💼 Business</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <div class="total-wrap">
+            <div style="font-size: 12px; color: #777;">Total</div>
+            <div class="total-price">RM 18.00</div>
+        </div>
+        <button class="place-order-btn">Place Order</button>
+    </div>
+
+</body>
+</html>

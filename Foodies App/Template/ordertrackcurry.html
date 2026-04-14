@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - Foodies</title>
+    <style>
+        body, html { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f7f7f7; color: #333; overflow-x: hidden; }
+        
+        /* 1. Header (GrabFood Style with Icons) */
+        .header { background: white; padding: 15px 5%; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+        .back-btn { text-decoration: none; color: black; font-size: 20px; font-weight: bold; }
+        .header-actions { display: flex; gap: 15px; }
+        .help-btn { text-decoration: none; color: #00A651; font-weight: 600; font-size: 14px; }
+        .item-img { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; }
+        
+        .main-container { max-width: 600px; margin: 0 auto; min-height: 100vh; padding-bottom: 50px; }
+
+        /* 2. Top Status Section (ETA + Timeline) */
+        .status-section { background: white; padding: 25px 20px; border-bottom: 8px solid #f7f7f7; }
+        .eta-time { font-size: 28px; font-weight: bold; }
+        .on-time-status { color: #00A651; font-weight: 500; font-size: 14px; }
+        
+        /* Simple Timeline Tracker (Like image example) */
+        .timeline-tracker { display: flex; align-items: center; margin-top: 15px; position: relative;}
+        .timeline-segment { flex: 1; height: 3px; background-color: #eee; margin: 0 5px; border-radius: 2px; position: relative; }
+        
+        /* First segment is yellow (preparing) to match history page */
+        .timeline-segment.active { background-color: #FFCC00; } 
+        
+        .timeline-icon { font-size: 18px; color: #bbb; width: 20px; text-align: center;}
+        .timeline-icon.active { color: #FFCC00; } /* Yellow for active */
+
+        /* 3. Sponsored Advertisement Card (JJ Jumbo Juice Style) */
+        .card { background: white; border-radius: 12px; margin: 20px 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card-header { padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+        .card-title { font-size: 16px; font-weight: bold; color: #333; }
+        .sponsored-tag { font-size: 11px; color: #aaa; text-transform: uppercase; }
+        
+        .ad-body { padding: 0; }
+        .ad-img { width: 100%; height: auto; display: block;} /* Follows example's square image crop */
+        
+        .ad-info { padding: 15px; border-bottom: 1px solid #eee; }
+        .ad-name { font-weight: 600; font-size: 14px; color: #333; }
+        
+        .learn-more-link { display: inline-block; text-decoration: none; color: #00A651; font-weight: bold; font-size: 13px; margin-top: 10px; }
+        
+        /* 4. Order Summary Card (Restaurant Name + Total) */
+        .card-summary { padding: 20px; margin: 20px 15px; display: flex; align-items: center; gap: 15px; position: relative; cursor: pointer; border-left: 5px solid #ccc; }
+        .card-summary:hover { background-color: #fafafa; }
+        
+        .rest-img { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #eee; object-fit: cover; }
+        .rest-info { flex: 1; }
+        .rest-name { font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+        .order-total { font-weight: bold; font-size: 15px; float: right; }
+        
+        .view-summary-bar { background: #fafafa; padding: 12px 20px; border-top: 1px solid #eee; border-radius: 0 0 12px 12px; font-size: 13px; font-weight: bold; color: #00A651; display: flex; justify-content: space-between; align-items: center; margin: 0 15px; position: relative; top: -15px;}
+        .card-arrow { color: #bbb; font-weight: normal;}
+
+        /* 5. Address / Delivery Path Section (Jollibee Style) */
+        .address-section { background: white; padding: 20px 15px; margin: 20px 0; border-bottom: 8px solid #f7f7f7;}
+        .delivery-path { display: flex; align-items: flex-start; gap: 10px; margin-top: 10px; }
+        .path-icons { width: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        
+        /* Specific GrabFood address icons from example */
+        .start-icon { width: 18px; height: 18px; background: #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; }
+        .end-icon { width: 18px; height: 18px; background: #FF3B30; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;}
+        .path-line { width: 2px; height: 40px; background: #eee; margin: 3px 0; }
+        
+        .address-text { flex: 1; font-size: 14px; line-height: 1.4; color: #333; }
+        .restaurant-name { font-weight: bold; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="historyorder.html" class="back-btn">←</a>
+        <div class="header-actions">
+            <a href="#" class="help-btn">Get help</a>
+            <span style="color:#666;">🔗</span>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="status-section">
+            <div style="color:#777; font-size:14px; margin-bottom: 5px;">Estimated Arrival</div>
+            <span class="eta-time">12:30 - 12:45 PM</span>
+            <div style="margin-top:5px;">
+                <span class="on-time-status">Normal Preparation</span>
+                <span style="color:#aaa; font-size:14px;"> • Waiting for kitchen to start</span>
+            </div>
+
+            <div class="timeline-tracker">
+                <span class="timeline-icon active">✓</span>
+                <span class="timeline-segment active"></span>
+                <span class="timeline-icon active">🥣</span>
+                <span class="timeline-segment"></span>
+                <span class="timeline-icon">🛵</span>
+                <span class="timeline-segment"></span>
+                <span class="timeline-icon">🏁</span>
+            </div>
+        </div>
+
+        <div class="card ad-card">
+            <div class="card-header">
+                <div class="card-title">You might like this!</div>
+                <span class="sponsored-tag">Sponsored</span>
+            </div>
+            <div class="ad-body">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&h=350" alt="Special Dish ad" class="ad-img">
+            </div>
+            <div class="ad-info">
+                <div class="ad-name">Foodies Chef Specials</div>
+                <div style="color:#777; font-size:13px; margin-top:5px;">Check out our weekly curated menu featuring Malaysian bestsellers.</div>
+                <a href="#" class="learn-more-link">Learn More <span class="card-arrow">→</span></a>
+            </div>
+        </div>
+
+        <a href="paymentcurry.html" style="text-decoration:none; color:inherit;">
+            <div class="card card-summary active">
+                <img src="https://images.unsplash.com/photo-1593560704563-f176a2eb61db?auto=format&fit=crop&w=300" class="item-img">
+                <div class="rest-info">
+                    <span class="order-total">RM 20.50</span>
+                    <div class="rest-name">Spice of Life</div>
+                </div>
+            </div>
+            <div class="view-summary-bar">
+                <span>View order summary</span>
+                <span class="card-arrow">→</span>
+            </div>
+        </div>
+        </a>
+
+        <div class="address-section">
+            <div class="section-title" style="font-size:14px; color:#aaa; font-weight:bold; text-transform:uppercase;">Delivery Address</div>
+            
+            <div class="delivery-path">
+                <div class="path-icons">
+                    <div class="start-icon">●</div>
+                    <div class="path-line"></div>
+                    <div class="end-icon">●</div>
+                </div>
+                <div class="address-text">
+                    <div class="restaurant-name">Spice of Life (Kajang)</div>
+                    <div style="color:#666; font-size:13px; margin-top: 15px;">Bangi Gateway, Persiaran Pekeliling, 43650 Bandar Baru Bangi</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
